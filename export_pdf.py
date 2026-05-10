@@ -1,4 +1,4 @@
-```python id="v4r8mx"
+
 #!/usr/bin/env python3
 
 import os
@@ -109,4 +109,3 @@ print("=" * 60)
 print("PDF BERHASIL DIBUAT")
 print(output_file)
 print("=" * 60)
-```
