@@ -1,15 +1,4 @@
 #!/usr/bin/env python3
-"""
-push_to_sheets.py
-=================
-
-Flow:
-  1. Cari sheet utama ("Infra Main")
-  2. Duplicate sheet utama -> backup timestamp
-  3. Reset sheet utama
-  4. Tulis data terbaru
-  5. Apply formatting
-"""
 
 from __future__ import annotations
 

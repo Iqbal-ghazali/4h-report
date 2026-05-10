@@ -1,21 +1,4 @@
 #!/usr/bin/env python3
-"""
-collect_infra.py
-================
-Query data infrastruktur dari 2 instance Prometheus:
-  - PROM_NODES     : controller + compute nodes (jaringan 10.18.236.x)
-  - PROM_INSTANCES : VM instances (jaringan 10.18.224.x)
-
-Output: 2 file JSON di subdirektori 'data/' relatif terhadap lokasi script
-  data/nodes_YYYYMMDD_HHMMSS.json
-  data/instances_YYYYMMDD_HHMMSS.json
-
-Direktori 'data/' akan dibuat otomatis jika belum ada.
-
-Usage:
-  python3 collect_infra.py
-  python3 collect_infra.py --output-dir /custom/path
-"""
 
 from __future__ import annotations
 
@@ -32,9 +15,6 @@ import requests
 PROM_NODES     = "http://10.18.251.13:9090"   # controller + compute
 PROM_INSTANCES = "http://10.18.224.200:9090"  # VM instances
 
-# Default output: subdirektori 'data/' di sebelah script ini
-# Menggunakan __file__ agar path selalu relatif ke lokasi script,
-# bukan ke direktori dari mana script dijalankan (CWD).
 SCRIPT_DIR   = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_DATA_DIR = os.path.join(SCRIPT_DIR, "data")
 
